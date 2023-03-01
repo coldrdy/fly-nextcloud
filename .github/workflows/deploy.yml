@@ -47,7 +47,6 @@ jobs:
           if [ -z "$(fly pg list | grep ${{ env.fly_app_name }}-db)" ]; then
               # If the postgres cluster has not already been deployed, deploy it
               fly pg create --name "${{ env.fly_app_name }}-db" \
-                            --organization "${{ env.fly_org }}" \
                             --region "${{ env.fly_app_region }}" \
                             --vm-size "shared-cpu-1x" \
                             --volume-size "1" \
